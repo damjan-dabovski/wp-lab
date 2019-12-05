@@ -18,7 +18,7 @@ public class PizzaRepository {
 
     @PostConstruct
     public void init(){
-        pizzas.add(new Pizza("Margherita","Margherita (tomato sauce, mozzarella)"));
+        /*.add(new Pizza("Margherita","Margherita (tomato sauce, mozzarella)"));
         pizzas.add(new Pizza("Carbonara","Carbonara (fresh cream, mozzarella, bacon)"));
         pizzas.add(new Pizza("Vegetariana","Vegetariana (tomato sauce, mushrooms))"));
         pizzas.add(new Pizza("Calzone","Calzone (Pizza dough, ricotta, pepperoni, pizza sauce, olive oil)"));
@@ -27,7 +27,7 @@ public class PizzaRepository {
         pizzas.add(new Pizza("Burger Classic","Burger Classic (barbecue sauce, beef, mozzarella, onions)"));
         pizzas.add(new Pizza("Boston Barbecue","Boston Barbecue (ham, chicken meat, onions)"));
         pizzas.add(new Pizza("Pepperoni","Pepperoni (tomato sauce, mozzarella, sausage)"));
-        pizzas.add(new Pizza("Quattro Formaggi","Quattro Formaggi (Taleggio, Mascarpone, Gorgonzola, Parmesan)"));
+        pizzas.add(new Pizza("Quattro Formaggi","Quattro Formaggi (Taleggio, Mascarpone, Gorgonzola, Parmesan)"));*/
     }
 
     public List<Pizza> getAllPizzas(){

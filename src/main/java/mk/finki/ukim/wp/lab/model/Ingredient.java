@@ -4,21 +4,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "Pizzas")
+@Table(name = "Ingredients")
 @Data
 @AllArgsConstructor
-public class Pizza {
+public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String name;
 
-    private String description;
+    private boolean spicy;
 
-    @OneToMany
-    private List<Ingredient> ingredients;
+    private float amount;
 
     private boolean veggie;
 }

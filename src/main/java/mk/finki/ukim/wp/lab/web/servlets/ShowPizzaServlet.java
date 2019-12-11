@@ -30,8 +30,8 @@ public class ShowPizzaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         WebContext context = new WebContext(req, resp, req.getServletContext());
-        List<Pizza> pizzas = service.listPizzas();
-        context.setVariable("pizzas", pizzas);
+        //List<Pizza> pizzas = service.listPizzas();
+        //context.setVariable("pizzas", pizzas);
         resp.setContentType("text/html; charset=UTF-8");
         this.engine.process("listPizzas.html",context,resp.getWriter());
     }

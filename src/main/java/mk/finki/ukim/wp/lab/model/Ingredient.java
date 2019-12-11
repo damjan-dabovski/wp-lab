@@ -1,22 +1,31 @@
 package mk.finki.ukim.wp.lab.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
-@Entity
-@Table(name = "Ingredients")
+@Entity(name = "Ingredients")
 @Data
-@AllArgsConstructor
+@RequiredArgsConstructor
+@NoArgsConstructor
 public class Ingredient {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @NonNull
     private String name;
 
+    @NonNull
     private boolean spicy;
 
+    @NonNull
     private float amount;
 
+    @NonNull
     private boolean veggie;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "ingredients")
+    private List<Pizza> pizzas;
 }

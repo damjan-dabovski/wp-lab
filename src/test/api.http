@@ -1,0 +1,88 @@
+POST http://localhost:8080/api/ingredients
+Content-Type: application/x-www-form-urlencoded
+
+name=tomato&spicy=false&amount=4.20&veggie=true
+
+###
+
+POST http://localhost:8080/api/ingredients
+Content-Type: application/x-www-form-urlencoded
+
+name=salami&spicy=false&amount=69&veggie=false
+
+###
+
+POST http://localhost:8080/api/ingredients
+Content-Type: application/x-www-form-urlencoded
+
+name=pepper&spicy=true&amount=14.88&veggie=true
+
+###
+
+GET http://localhost:8080/api/ingredients
+
+###
+
+GET http://localhost:8080/api/ingredients/tomato
+
+###
+
+GET http://localhost:8080/api/ingredients?spicy=true
+
+###
+
+DELETE http://localhost:8080/api/ingredients/tomato
+
+###
+
+PATCH http://localhost:8080/api/ingredients/tomato
+Content-Type: application/x-www-form-urlencoded
+
+name=tomato&spicy=false&amount=4.20&veggie=false
+###
+
+GET http://localhost:8080/api/pizzas
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/pizzas
+Content-Type: application/x-www-form-urlencoded
+
+name=testPizza&description="This is a test pizza"&ingredients=tomato, pepper
+
+###
+
+POST http://localhost:8080/api/pizzas
+Content-Type: application/x-www-form-urlencoded
+
+name=testPizza_2&description="This is a test pizza"&ingredients=salami
+
+###
+
+POST http://localhost:8080/api/pizzas
+Content-Type: application/x-www-form-urlencoded
+
+name=testPizza_3&description="This is a test pizza"&ingredients=pepper,salami,tomato
+
+###
+
+GET http://localhost:8080/api/ingredients/pepper/pizzas
+
+###
+
+PUT http://localhost:8080/api/pizzas/testPizza
+Content-Type: application/x-www-form-urlencoded
+
+name=testPizzaUpdated&description=updated&ingredients=pepper&veggie=true
+
+###
+
+DELETE http://localhost:8080/api/pizzas/testPizza
+
+###
+
+GET http://localhost:8080/api/pizzas?totalIngredients=3
+Accept: application/json
+
+###

@@ -35,6 +35,22 @@ public class PizzaApi {
         return this.service.getPizzasWithTotalIngredients(total);
     }
 
+    @GetMapping(path = "/compare")
+    public List<Ingredient> getMutualIngredients(@RequestParam("pizza1") String p1,
+                                                 @RequestParam("pizza2") String p2){
+        return this.service.getMutualIngredients(p1,p2);
+    }
+
+    @GetMapping(params = "spicy")
+    public List<Pizza> getSpicyPizzas(@RequestParam("spicy") boolean spicy){
+        return this.service.getSpicyPizzas(spicy);
+    }
+
+    @GetMapping(path = "/{id}")
+    public Pizza getPizza(@PathVariable String id){
+        return this.service.getPizza(id);
+    }
+
     @PutMapping(path = "/{id}")
     public Pizza updatePizza(@PathVariable String id,
                              @RequestParam("name") String name,

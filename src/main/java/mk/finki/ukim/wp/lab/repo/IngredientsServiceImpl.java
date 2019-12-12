@@ -67,6 +67,11 @@ public class IngredientsServiceImpl implements IngredientsService {
 
     @Override
     public void deleteIngredient(String name) {
+        Ingredient target = this.getIngredient(name);
+        List<Pizza> pizzasContainingThis = this.getPizzasContaining(name);
+        for(Pizza p : pizzasContainingThis){
+            p.removeIngredient(target);
+        }
         this.repository.deleteById(name);
     }
 }

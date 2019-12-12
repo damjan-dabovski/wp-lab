@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PizzaServiceImpl implements PizzaService {
@@ -76,6 +77,29 @@ public class PizzaServiceImpl implements PizzaService {
             }
         }
         return filteredPizzas;
+    }
+
+    @Override
+    public List<Ingredient> getMutualIngredients(String p1, String p2) {
+        Pizza pizza1 = this.repository.findById(p1).orElseThrow(PizzaNotFoundException::new);
+        Pizza pizza2 = this.repository.findById(p1).orElseThrow(PizzaNotFoundException::new);
+        List<Ingredient> ing1 = pizza1.getIngredients();
+        List<Ingredient> ing2 = pizza2.getIngredients();
+        List<Ingredient> result = ing1.stream()
+                .distinct()
+                .filter(ing2::contains)
+                .collect(Collectors.toList());
+        return result;
+    }
+
+    @Override
+    public List<Pizza> getSpicyPizzas(boolean spicy) {
+        return this.repository.getSpicyPizzas(spicy);
+    }
+
+    @Override
+    public Pizza getPizza(String id) {
+        return this.repository.findById(id).orElseThrow(PizzaNotFoundException::new);
     }
 
 

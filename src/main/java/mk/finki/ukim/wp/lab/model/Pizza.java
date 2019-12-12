@@ -21,4 +21,9 @@ public class Pizza {
     private List<Ingredient> ingredients;
 
     private boolean veggie;
+
+    public void removeIngredient(Ingredient i){
+        this.ingredients.remove(i);
+        i.removePizza(this);
+    }
 }

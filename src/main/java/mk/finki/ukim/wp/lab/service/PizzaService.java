@@ -18,4 +18,10 @@ public interface PizzaService {
     void deletePizza(String id);
 
     List<Pizza> getPizzasWithTotalIngredients(int total);
+
+    List<Ingredient> getMutualIngredients(String p1, String p2);
+
+    List<Pizza> getSpicyPizzas(boolean spicy);
+
+    Pizza getPizza(String id);
 }

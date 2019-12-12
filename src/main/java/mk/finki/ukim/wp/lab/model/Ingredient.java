@@ -28,4 +28,8 @@ public class Ingredient {
     @JsonIgnore
     @ManyToMany(mappedBy = "ingredients")
     private List<Pizza> pizzas;
+
+    public void removePizza(Pizza p){
+        this.pizzas.remove(p);
+    }
 }
